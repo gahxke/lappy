@@ -40,6 +40,17 @@ cryptroot	UUID=<sda2>	none	luks
 $ sudo oma topics --opt-in grub-2.14
 ```
 
+### No such cryptodisk
+By default, Argon2i(d)(?) has a 1GB memory, which GRUB *cannot* handle
+
+Set the memory size to 65536KB (or 64MB).
+> [!CAUTION]
+> This reduces security! Use a seperated header file if possible.
+
+```bash
+$ sudo cryptsetup luksConvertKey -h /dev/sda2 --pbkdf argon2i --pbkdf-memory 65536
+```
+
 <sub>thanks bai!</sub>
 
 # Ricing, i guess
