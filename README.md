@@ -32,7 +32,7 @@ GRUB_ENABLE_CRYPTODISK=y
 ```
 ```bash
 # /etc/crypttab
-cryptroot	UUID=e7771cef-f79f-4960-bbdc-073fc99caaca	none	luks
+cryptroot	UUID=<sda2>	none	luks
 ```
 ### Needed for LUKS2 (may update in the future
 
