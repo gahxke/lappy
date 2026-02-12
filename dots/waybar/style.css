@@ -1,0 +1,223 @@
+/* ============================= */
+/* Catppuccin Mocha Color Scheme */
+/* ============================= */
+
+@define-color mocha-rosewater rgba(245, 224, 220, 0.8);
+@define-color mocha-flamingo  rgba(242, 205, 205, 0.8);
+@define-color mocha-pink      rgba(245, 194, 231, 0.8);
+@define-color mocha-mauve     rgba(203, 166, 247, 0.8);
+@define-color mocha-red       rgba(243, 139, 168, 0.85); /* main accent */
+@define-color mocha-maroon    rgba(235, 160, 172, 0.85);
+@define-color mocha-peach     rgba(250, 179, 135, 0.8);
+@define-color mocha-yellow    rgba(249, 226, 175, 0.8);
+@define-color mocha-green     rgba(166, 227, 161, 0.8);
+@define-color mocha-teal      rgba(148, 226, 213, 0.8);
+@define-color mocha-sky       rgba(137, 220, 235, 0.8);
+@define-color mocha-sapphire  rgba(116, 199, 236, 0.8);
+@define-color mocha-blue      rgba(137, 180, 250, 0.8);
+@define-color mocha-lavender  rgba(180, 190, 254, 0.8);
+
+@define-color background-base  rgba(30, 30, 46, 0.9);   /* base */
+@define-color background-dim   rgba(17, 17, 27, 0.6);   /* crust-ish */
+@define-color hover-dark       rgba(17, 17, 27, 0.4);
+@define-color mute-dark        rgba(17, 17, 27, 0.75);
+
+@define-color text-main        rgba(205, 214, 244, 0.95);
+
+/* ================= */
+/* Global            */
+/* ================= */
+
+* {
+    font-family: "JetBrains Mono Nerd Font", "JetBrains Mono";
+    font-size: 13px;
+    transition: 0.5s ease-out;
+}
+
+window#waybar {
+    background-color: @background-base;
+    color: @text-main;
+    transition-property: background-color;
+    transition: 1s ease-in-out;
+    border-radius: 0px 5px 5px 0px;
+}
+
+window#waybar.empty {
+    background-color: @hover-dark;
+    transition-duration: 0.5s;
+    border-radius: 0px 20px 20px 0px;
+}
+
+button {
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: inherit;
+    box-shadow: inset 2px 0px @mocha-red;
+}
+
+/* ================= */
+/* Common Modules    */
+/* ================= */
+
+#custom-powerbutton,
+#custom-reboot,
+#custom-suspend,
+#custom-lock,
+#custom-idlekiller,
+#custom-playpause,
+#custom-wallpaper,
+#user,
+button,
+#window,
+#network,
+#custom-appmenu,
+#backlight,
+#backlight-slider,
+#pulseaudio,
+#pulseaudio-slider,
+#battery,
+#clock {
+    padding: 10px 0px;
+    color: @text-main;
+    background: transparent;
+}
+
+#window {
+    margin: 20px 0px;
+}
+
+window#waybar.empty #window {
+    opacity: 0;
+}
+
+/* ================= */
+/* Clock             */
+/* ================= */
+
+#clock {
+    box-shadow: inset 2px 0 @mocha-blue;
+}
+
+#clock:hover {
+    color: @mocha-blue;
+    background-color: @hover-dark;
+}
+
+/* ================= */
+/* Audio             */
+/* ================= */
+
+#pulseaudio,
+#pulseaudio-slider {
+    box-shadow: inset 2px 0px @mocha-mauve;
+}
+
+#pulseaudio:hover {
+    color: @mocha-mauve;
+    background-color: @hover-dark;
+}
+
+#pulseaudio.muted {
+    background-color: @mute-dark;
+}
+
+#pulseaudio-slider trough {
+    min-height: 60px;
+    min-width: 10px;
+    border-radius: 5px;
+    background: @hover-dark;
+}
+
+#pulseaudio-slider highlight {
+    background: @text-main;
+}
+
+#pulseaudio-slider:hover highlight {
+    background: @mocha-mauve;
+}
+
+/* ================= */
+/* Backlight         */
+/* ================= */
+
+#backlight,
+#backlight-slider {
+    box-shadow: inset 2px 0px @mocha-peach;
+}
+
+#backlight:hover {
+    color: @mocha-peach;
+    background-color: @hover-dark;
+}
+
+/* ================= */
+/* Battery           */
+/* ================= */
+
+#battery,
+#battery.charging,
+#battery.plugged {
+    box-shadow: inset 2px 0px @mocha-green;
+}
+
+#battery:hover {
+    color: @mocha-green;
+    background-color: @hover-dark;
+}
+
+/* ================= */
+/* Taskbar           */
+/* ================= */
+
+#taskbar button.active {
+    background: @mute-dark;
+    box-shadow: inset 2px 0px @mocha-red;
+}
+
+/* ================= */
+/* App Menu / Power  */
+/* ================= */
+
+#custom-appmenu {
+    box-shadow: inset 2px 0px @mocha-yellow;
+}
+
+#custom-appmenu:hover {
+    color: @mocha-yellow;
+    background-color: @hover-dark;
+}
+
+#custom-powerbutton {
+    box-shadow: inset 2px 0px @mocha-red;
+}
+
+#custom-powerbutton:hover {
+    color: @mocha-red;
+    background-color: @hover-dark;
+}
+
+/* ================= */
+/* Workspaces        */
+/* ================= */
+
+#workspaces button.active {
+    background-color: @mute-dark;
+    font-weight: 900;
+}
+
+#workspaces button.active:hover {
+    color: @mocha-red;
+}
+
+#workspaces button.focused {
+    box-shadow: inset 2px 0px @mocha-red;
+}
+
+#workspaces button.urgent {
+    background-color: @mocha-red;
+    color: @background-base;
+}
+

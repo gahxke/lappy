@@ -1,0 +1,26 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+  	"type": "iterm",
+	"source": "/home/gahxke/.config/AnAn.png",
+	"width": 30,
+	"height": 14,
+	"padding": {
+		"top": 0,
+		"left": 0,
+		"right": 0
+	}
+  },
+  "modules": [
+    "title",
+    "separator",
+    "os",
+    "host",
+    "wm",
+    "terminal",
+    "cpu",
+    "locale",
+    "break",
+    "colors"
+  ]
+}
