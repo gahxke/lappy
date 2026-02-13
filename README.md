@@ -40,6 +40,23 @@ cryptroot	UUID=<sda2>	none	luks
 $ sudo oma topics --opt-in grub-2.14
 ```
 
+## Secureboot
+`sbctl` isn't packaged. Build it.
+```bash
+$ git clone https://github.com/Foxboron/sbctl && cd sbctl
+$ sudo oma install go asciidoc devel-base
+$ make install
+```
+
+### GRUB without a shim
+GRUB has to be compact in order to run.
+```bash
+$ sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi \
+    --modules="all_video boot btrfs cat echo ext2 fat gfxterm gfxmenu gfxterm_background gzio halt help linux ls part_gpt play cpuid tpm cryptodisk luks" \
+    --bootloader-id=aosc \
+    --disable-shim-lock
+```
+
 ### No such cryptodisk
 By default, Argon2i(d)(?) has a 1GB memory, which GRUB *cannot* handle
 
