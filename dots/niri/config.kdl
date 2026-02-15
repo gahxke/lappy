@@ -60,9 +60,11 @@ layout {
 }
 
 spawn-sh-at-startup "exec mako"
+spawn-sh-at-startup "fcitx5 -rd"
 spawn-sh-at-startup "~/.config/scripts/wallpaper.sh"
 spawn-sh-at-startup "exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=niri"
 spawn-sh-at-startup "exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+spawn-at-startup "blueman-applet"
 spawn-at-startup "waybar"
 
 hotkey-overlay {

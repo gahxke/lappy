@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
     "layer": "top",
-    "position": "left",
+    "position": "right",
 
     "margin-top": 4,
     "margin-bottom": 4,
@@ -20,6 +20,7 @@
 
     "modules-right": [
         "network",
+	"custom/bluetooth",
         "group/apps",
         "group/stats",
         "clock"
@@ -182,6 +183,15 @@
         "format-alt": "{ifname}: {ipaddr}/{cidr}: {essid}",
         "rotate": 270
     },
+
+    /* Bluetooth */
+    "custom/bluetooth": {
+	    "format": "",
+	    "tooltip": "Bluetooth",
+	    "on-click": "blueman-manager",
+	    "interval": 60,
+	    "exec": "bluetoothctl show | grep -q 'Powered: yes' && echo '' || echo '󰂲'"
+    }
 
     /* ================= */
     /* Power Group      */
