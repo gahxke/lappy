@@ -41,11 +41,9 @@ $ sudo oma topics --opt-in grub-2.14
 ```
 
 ## Secureboot
-`sbctl` isn't packaged. Build it.
+Install `sbctl`
 ```bash
-$ git clone https://github.com/Foxboron/sbctl && cd sbctl
-$ sudo oma install go asciidoc devel-base
-$ make install
+$ sudo oma install sbctl
 ```
 
 ### GRUB without a shim
