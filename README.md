@@ -34,11 +34,6 @@ GRUB_ENABLE_CRYPTODISK=y
 # /etc/crypttab
 cryptroot	UUID=<sda2>	none	luks
 ```
-### Needed for LUKS2 (may update in the future
-
-```bash
-$ sudo oma topics --opt-in grub-2.14
-```
 
 ## Secureboot
 Install `sbctl`
@@ -65,8 +60,6 @@ Set the memory size to 65536KB (or 64MB).
 ```bash
 $ sudo cryptsetup luksConvertKey -h /dev/sda2 --pbkdf argon2i --pbkdf-memory 65536
 ```
-
-<sub>thanks bai!</sub>
 
 # Ricing, i guess
 
